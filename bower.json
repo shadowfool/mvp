@@ -1,0 +1,23 @@
+{
+  "name": "2016-04-mvp",
+  "description": "escape",
+  "main": "server.js",
+  "authors": [
+    "Aaron Freidus <aaronf101@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/shadowfool/2016-04-mvp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5"
+  }
+}

@@ -1,4 +1,4 @@
-# Project Name #
+# Project Name # Escape Calculator
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > 2016 Presidential Election Escape Calculator
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > Republicans, Democrats, and Independents alike can use this calculator to decide which country to escape to if their candidate does not win the presidential election in November.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > The product allows the user to choose their political afiliation, and returns a country with a favorable exchange rate vs the USD for the user to move to. If the user is not satisfied with the country, a new country can will be provided. The user is prompted to provide an email if they so choose, and if on November 8th 2016 the presidential candidate running for their political affilation does not win the general election, an up to date country will be provided via email. 
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > There's a good chance a large chunk of Americans are going to be upset with the result of the 2016 presidential election. This calculator will make it easy to figure out which country provides the most favoriable cost of living for Americans when factoring in exchange rate. 
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > The product centrializes several sources of data in order to provide the most up to date and accurate call on which country to move to. 
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > 'It's never too late to leave.' - Aaron Freidus
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Click on the link, and follow the on screen instructions.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > 'Before using the Escape Calculator, I was . Now I'm off to Zimbabwe where I can get 360 ZWD for a single USD. I'm going to be rich!' - John Smith 
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.

@@ -1,8 +1,19 @@
 angular.module('escape.result', [])
-.controller('ResultController', function($scope, $location, $http, $route) {
+.controller('ResultController', function($scope, $rootScope, $location, $http, $route) {
   $scope.mulligan = function(){
     $route.reload()
-  };
+  }
+  $scope.messages = function(){
+      if($rootScope['party']== 'Democrat'){
+        $scope.message = 'It\'s over, and you let it happen!'
+      }
+      if($rootScope['party'] == 'Independent'){
+        $scope.message = 'You were bound to lose one way or another. Next time pick a side. '
+      }
+      if($rootScope['party'] == 'Republican'){
+        $scope.message = 'Really? You were gunning for Trump?'
+      }
+  }
   // gives you a random curency and the exchange rate
   var pickRandomCurency = function(curencyData){
     var result = [];
@@ -23,10 +34,24 @@ angular.module('escape.result', [])
       var country = response.data[Math.floor(Math.random()*response.data.length)];
       $scope.data = country;
       $scope.curency = curency;
+      console.log('somthing')
+      $scope.messages();
     });
   });
-  console.log($scope)
 })
+// .service('poliMessage', function($rootScope){
+//     this.testParty = function(){
+//       if($rootScope['party']== 'Democrat'){
+//         return 'It\'s over, and you let it happen!'
+//       }
+//       if($rootScope['party'] == 'Independent'){
+//         return 'You were bound to lose one way or another. Next time pick a side. '
+//       }
+//       if($rootScope['party'] == 'Republican'){
+//         return 'Really? You were gunning for Trump?'
+//       }
+//     }
+// })
 
 
 

@@ -17,7 +17,7 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.listen(port);
 
 app.get('*', function(req,res){
-  res.redirect('/partyChooser');
+  res.redirect('/');
 })
 
 console.log('Running on port: ' + port);

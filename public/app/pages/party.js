@@ -1,9 +1,8 @@
 angular.module('escape.party', [])
-.controller('PartyController', function($scope, $location) {
+.controller('PartyController', function($scope, $rootScope, $location) {
   $scope.parties = ['Democrat', 'Independent', 'Republican'];
   $scope.chooseparty = function(party){
-    $scope.party = party;
-    console.log(party);
+    $rootScope.party = party;
     $location.path('/result');
   }
 })

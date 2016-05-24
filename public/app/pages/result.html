@@ -1,7 +1,11 @@
 <div id='container'>
   <div class='container-fluid'>
-  rendering
-    <div class='row'>
+    <div ngController='ResultController'>
+      <div>Country Name </div>
+      <div>{{data.name}}</div>
+      <div>{{rate}} {{curency[0]}}</div>
+       <button ng-click='mulligan()' type="submit" class="btn btn-default">Want to move somewhere else?</button>
+      <div>
     </div>
   </div>
 </div>

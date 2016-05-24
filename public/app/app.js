@@ -9,6 +9,9 @@ angular.module('escapeApp', ['escape.party', 'escape.result', 'ngRoute'])
         templateUrl: 'app/pages/result.html',
         controller: 'ResultController'
       })
+      .otherwise({
+        redirectTo: '/partyChooser'
+      });
 
   }).run(function ($rootScope, $location) {
 

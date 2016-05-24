@@ -1,3 +1,6 @@
-.party{
+
+.partyHolder{
+  top:5em;
+  left:5em;
   display: inline;
 }

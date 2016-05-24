@@ -5,6 +5,10 @@ angular.module('escapeApp', ['escape.party', 'ngRoute'])
         templateUrl: 'app/pages/party.html',
         controller: 'PartyController'
       })
+      .when('/result', {
+        templateUrl: 'app/pages/result.html',
+        controller: 'ResultController'
+      })
 
 }).run(function ($rootScope, $location) {
 

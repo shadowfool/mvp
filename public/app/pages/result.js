@@ -8,7 +8,7 @@ angular.module('escape.result', [])
         $scope.message = 'It\'s over, and you let it happen!'
       }
       if($rootScope['party'] == 'Independent'){
-        $scope.message = 'You were bound to lose one way or another. Next time pick a side. '
+        $scope.message = 'You were bound to lose one way or another. Next time, pick a side. '
       }
       if($rootScope['party'] == 'Republican'){
         $scope.message = 'Really? You were gunning for Trump?'
@@ -20,7 +20,6 @@ angular.module('escape.result', [])
     var keys = Object.keys(curencyData.rates);
     result.push(keys[Math.floor(Math.random()*keys.length)]);
     result.push(curencyData.rates[result[0]]);
-    $scope.rate = result[1];
     return result;
   };
 
@@ -32,10 +31,10 @@ angular.module('escape.result', [])
     $http.get('https://restcountries.eu/rest/v1/currency/' + curency[0])
     .then(function(response){
       var country = response.data[Math.floor(Math.random()*response.data.length)];
+      $scope.messages();
       $scope.data = country;
       $scope.curency = curency;
-      console.log('somthing')
-      $scope.messages();
+      $scope.rate = curency[1];
     });
   });
 })

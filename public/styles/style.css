@@ -1,4 +1,7 @@
-
+.american{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Vertical_United_States_Flag.svg/2000px-Vertical_United_States_Flag.svg.png")
+}
 .partyHolder{
-  display: inline;
+  display: inline-block;
+  text-align: center
 }

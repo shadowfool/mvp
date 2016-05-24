@@ -1,23 +1,36 @@
-<div id='container'>
+<div id='container' ng-show='loading' class='ng-hide'>
   <div class='container-fluid'>
     <div ngController='ResultController'>
       <h2>{{message}}</h2>
-      <h2>Looks like you're moving to: </h2>
+      <h2>You should move to: </h2>
       <a ng-href='https://en.wikipedia.org/wiki/{{data.name}}'><h3 class=country>{{data.name}}</h3></a>
       <h3> One dollar USD will get you: </h3>
-      <h4>{{rate}} {{curency[0]}}</h4>
+      <h4>{{rate}} {{currency[0]}}</h4>
+      <h4 ng-show="showBigMac" class="ng-hide">Which is {{bigMac}} % of a Big Mac </h4>
        <button ng-click='mulligan()' type="submit" class="btn btn-default">Want to move somewhere else?</button>
       <div>
     </div>
-  </div>
   <br>
-  <h5> We've noticed it's not yet November 4th, would you like to be reminded on election day if your party loses? </h5>
-  <form>
+
+  <!-- Twitter button -->
+  <!-- try to bind country name to tweet with ng-bind? -->
+<!--   <a href="https://twitter.com/share" class="twitter-share-button" data-text="Use in case of POTUS emergency" data-size="large">Tweet</a> 
+   -->
+  <!-- end twitter button -->
+  <br>
+  <h5> We've noticed it's not yet November 8th, would you like to be reminded on election day if your party loses? </h5>
+  <form name='emailForm'>
    <fieldset class="form-group">
-      <label for="remindMe">Email address</label>
-      <input type="email" class="form-control" id="remindMe" placeholder="Enter email">
-      <small class="text-muted">We'll never share your email with anyone else.</small>
+      <label for="remindMe">Enter your email address: </label>
+      <input name='input' ng-model="contactform.email" type="email" class="input-sm" id="remindMe" placeholder="Enter email">
+      <div role="alert">
+      <span class="error" ng-show="emailForm.input.$error.required">
+        Required!</span>
+      <span class="error" ng-show="emailForm.input.$error.email">
+        Please provide a valid email address</span>
+      </div>
+      <small class="text-muted">We'll never share your email with the NSA.</small>
    </fieldset>
-   <button type="submit" class="btn btn-primary">Submit</button>
+   <button ng-disabled="emailForm.$invalid" ng-click='postEmail(contactform)' type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>

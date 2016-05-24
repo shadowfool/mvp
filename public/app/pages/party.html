@@ -1,13 +1,16 @@
 <div id='container'>
-  <div class='container-fluid'>
-  <h1>Is it time to flee the country already?</h1>
-  <br>
-  <h4>Your party affiliation is:</h4>
-  <br>
-    <div class='row'>
-      <div class="partyHolder col-lg-2" ng-repeat="party in parties">
-        <button ng-click='chooseparty(party)' type="submit" class="party btn btn-default">{{party}}</button>
+ <div class=col-sm-4>
+    <div class='container-fluid'>
+    <h1>Is it time to flee the country already?</h1>
+    <h5 ng-show='days >= 0'>Looks like it's not time yet, there are still {{days}} days until the election. </h5>
+    <br>
+    <h4>Your party affiliation is:</h4>
+    <br>
+      <div class='row'>
+        <div class="partyHolder" ng-repeat="party in parties">
+          <button ng-click='chooseparty(party)' type="submit" class="party btn btn-default">{{party}}</button>
+        </div>
       </div>
     </div>
-  </div>
+    </div>
 </div>

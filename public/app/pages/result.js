@@ -1,14 +1,12 @@
 angular.module('escape.result', [])
 .controller('ResultController', function($scope, $rootScope, $location, $http, $route) {
-  //show booleans
+  //show booleans, hiding for smooth loading after api calls
   $scope.showBigMac = false;
   $scope.loading = false;
   //reloads page on click
   $scope.mulligan = function(){
-    $route.reload()
+    $route.reload();
   }
-  $scope.twitterScript = function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}};
-  $scope.twitterScript(document, 'script', 'twitter-wjs');
  // posts email to DB
   $scope.postEmail = function(email){
     if(email){
@@ -54,13 +52,16 @@ angular.module('escape.result', [])
       $scope.data = country;
       $scope.currency = currency;
       $scope.rate = currency[1];
+      // show big mac cost if exists in costOfBigMac data set
       if(costOfBigMac[$scope.data.name] !== undefined){
         $scope.showBigMac = true;
         $scope.bigMac = ($scope.rate/costOfBigMac[$scope.data.name] * 100).toFixed(2);
       }
+      // unhide all elements for smooth loading
       $scope.loading = true;
-    });
-  });
+    })
+  })
+  // manual data set of big mac cost per country in native curency
   var costOfBigMac = {'Argentina': 33,
     'Australia': 5.3,
     'Brazil': 13.5,
@@ -89,6 +90,7 @@ angular.module('escape.result', [])
     'Philippines': 131,
     'Poland': 9.6,
     'Russia': 114,
+    'Republic of Ireland': 3.6,
     'Saudi Arabia': 12,
     'Singapore': 4.7,
     'South Africa':  28,
@@ -120,7 +122,9 @@ angular.module('escape.result', [])
     'Romania': 9.8,
     'Tokelau': 5.9,
     'Bulgaria': 3.99,
-    'Bhutan': 269
+    'Bhutan': 269,
+    'Greenland': 30,
+    'Heard Island and McDonald Islands': .0001
   }
 });
 

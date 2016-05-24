@@ -1,4 +1,4 @@
-angular.module('escapeApp', ['escape.party', 'ngRoute'])
+angular.module('escapeApp', ['escape.party', 'escape.result', 'ngRoute'])
   .config(function($routeProvider, $locationProvider){
     $routeProvider
       .when('/partyChooser', {
@@ -10,6 +10,6 @@ angular.module('escapeApp', ['escape.party', 'ngRoute'])
         controller: 'ResultController'
       })
 
-}).run(function ($rootScope, $location) {
+  }).run(function ($rootScope, $location) {
 
-});
+  });

@@ -22,7 +22,7 @@ angular.module('escape.result', [])
   // spits out message depending on party;
   $scope.messages = function(){
       if($rootScope['party']== 'Democrat'){
-        $scope.message = 'It\'s over, and you let it happen!'
+        $scope.message = 'Trump reigns supreme!'
       }
       if($rootScope['party'] == 'Independent'){
         $scope.message = 'You were bound to lose one way or another. Next time, pick a side. '
@@ -49,6 +49,8 @@ angular.module('escape.result', [])
     .then(function(response){
       var country = response.data[Math.floor(Math.random()*response.data.length)];
       $scope.messages();
+      $scope.lat = country.latlng[0];
+      $scope.lon = country.latlng[1];
       $scope.data = country;
       $scope.currency = currency;
       $scope.rate = currency[1];
@@ -58,7 +60,14 @@ angular.module('escape.result', [])
         $scope.bigMac = ($scope.rate/costOfBigMac[$scope.data.name] * 100).toFixed(2);
       }
       // unhide all elements for smooth loading
-      $scope.loading = true;
+    })
+    .then(function(response){
+      $http.post('/api/weather',{lat: $scope.lat, lon:$scope.lon})
+      .then(function(response){
+        $scope.weather = response.data.main.temp
+        console.log($scope.weather);
+        $scope.loading = true;
+      })
     })
   })
   // manual data set of big mac cost per country in native curency
